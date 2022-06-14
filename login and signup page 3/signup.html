@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            margin-top: 70px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 20px;
+        }
+        #container>h2{
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+        input[type="text"],input[type="tel"],input[type="email"],input[type="password"],textarea{
+            width: 100%;
+            padding: 13px;
+            border: 1px solid grey;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        #container>p{
+            text-align: center;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 15px;
+            color: #979aa1  ;
+        }
+        #container>button{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 40px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #2874f0;
+        }
+        button+div{
+            margin-top: 40px;
+            text-align: center;
+            color: #979aa1  ;
+        }
+        a{
+            color: blue;
+
+        }
+
+       #foot-of-page{
+       width: 100%;
+       margin-top: 70px;
+       margin-bottom: 40px;
+       }
+       #foot-of-page>ul{
+       margin:auto;
+       display: flex;
+       justify-content: space-around;
+       }
+       #foot-of-page>h3{
+       border: 1px solid;
+       background-color: #2874f0;
+       width: 100%;
+       padding: 20px;
+       text-align: center;
+       }
+
+      #foot-of-page>ul>li{
+      font-size: 20px;
+      padding: 5px 0px;
+      }
+
+      #foot-of-page>ul>li>a{
+      text-decoration: none;
+      color: black;
+      hover:pointer
+      }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="">Full name</label><br>
+            <input id="name" type="text" placeholder="Enter your full name"><br><br>
+            <label for="">Mobile number</label><br>
+            <input id="mobile" type="tel" placeholder="Enter your mobile number"><br><br>
+            <label for="">Email</label><br>
+            <input id="email" type="email" placeholder="Enter your email"><br><br>
+            <label for="">Password</label><br>
+            <input id="password" type="password" placeholder="Enter your password"><br><br>
+            <label for="">Confirm Password</label><br>
+            <input id="password" type="password" placeholder="Enter your password"><br><br>
+        </form>
+        <p>By signing up, I accept the ideakart <a href="https://ideakart.com/privacy">Terms of Service</a> and acknwlwdge the <a href="https://ideakart.com/privacy"></a>.</p>
+        <button>SIGN UP</button>
+        <div>Already have an account? <a href="index.html">Sign In</a></div>
+    </div>
+
+    <div id="foot-of-page">
+        <h3>Get To Know Us</h3>
+        <ul>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/contact">Contact</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/search">Search</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/privacy">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/refund-policy">Refund Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/make-money">Earn Money Online</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://www.quickbuyer.in/">Quick Buyer</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click",mySignup);
+    let dataArr=JSON.parse(localStorage.getItem("userData"))||[];
+    function mySignup(){
+        event.preventDefault();
+        let dataObj={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            password:document.querySelector("#password").value
+        };
+
+        if(checkEmail(dataObj.email)==true){
+            dataArr.push(dataObj);
+        localStorage.setItem("userData",JSON.stringify(dataArr));
+        if(dataObj.email==""||dataObj.password==""||dataObj.name==""){
+            alert("please fill all details")
+        }else{
+            alert("Sign up completed....please signin");
+            window.location.href="index.html";
+        }
+        }else{
+            alert("Account already exist")
+        }
+
+        function checkEmail(email){
+            let filtered=dataArr.filter(function(ele){
+                return email===ele.email;
+            })
+            if(filtered.length>0){
+                return false;
+            }else{
+                return true;
+            }
+
+        }
+    }
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login|signup|page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Welcome</h2>
+            <label>
+                <span>Email</span>
+                <input type="email" />
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" />
+            </label>
+            <p class="forgot-pass">Forgot password?</p>
+            <button type="button" class="submit">Sign In</button>
+         
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                 
+                    <h3>Don't have an account? Please Sign up!<h3>
+                </div>
+                <div class="img__text m--in">
+                
+                    <h3>If you already has an account, just sign in.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Create your Account</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text" />
+                </label>
+                <label>
+                    <span>Mobile number</span>
+                    <input type="tel" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" />
+                </label>
+                <label>
+                    <span>Conform Password</span>
+                    <input type="password" />
+                </label>
+                <button type="button" class="submit">Sign Up</button>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div id="foot-of-page">
+        <h3>Get To Know Us</h3>
+        <ul>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/contact">Contact</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/search">Search</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/privacy">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/refund-policy">Refund Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/make-money">Earn Money Online</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://www.quickbuyer.in/">Quick Buyer</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<script>
+    document.querySelector('.img__btn').addEventListener('click', function() {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+</script>

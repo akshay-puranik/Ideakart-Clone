@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            margin-top: 70px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 20px;
+        }
+        #container>h2{
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+        input[type="email"],input[type="password"],textarea{
+            width: 100%;
+            padding: 13px;
+            border: 1px solid grey;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+    
+        #container>button{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 40px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #2874f0;
+        }
+        button+div{
+            border: 1px solid #979aa1 ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            margin-top: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+       
+        #container>div:last-child{
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #a29696;
+           
+        }
+
+        #forgot{
+            margin-left: 280px;
+            color: blue;
+        }
+        a{
+            color: blue;
+
+        }
+        div>p{
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+       #foot-of-page{
+       width: 100%;
+       margin-top: 70px;
+       margin-bottom: 40px;
+       }
+       #foot-of-page>ul{
+       margin:auto;
+       display: flex;
+       justify-content: space-around;
+       }
+       #foot-of-page>h3{
+       border: 1px solid;
+       background-color: #2874f0;
+       width: 100%;
+       padding: 20px;
+       text-align: center;
+       }
+
+      #foot-of-page>ul>li{
+      font-size: 20px;
+      padding: 5px 0px;
+      }
+
+      #foot-of-page>ul>li>a{
+      text-decoration: none;
+      color: black;
+      hover:pointer
+      }
+
+</style>
+</head>
+<body>
+    <div id="container">
+        <h2>Sign In</h2>
+        <form>
+            <label for="">Email</label><br>
+            <input id="email" type="email" placeholder="Enter email"><br><br>
+            <label for="">Password</label> <label for="" id="forgot">Forgot Password?</label><br>
+            <input id="password" type="password" placeholder="Enter pasword"><br><br>
+        </form>
+        <button>SIGN IN</button>
+        <div>
+            <img src="https://sso.masaischool.com/google.svg" alt="error">
+            <p>CONTINUE WITH GOOGLE</p>
+        </div>
+
+        <div>Dont't have an account? <a href="signup.html">Sign Up</a></div>
+    </div>
+
+    <div id="foot-of-page">
+        <h3>Get To Know Us</h3>
+        <ul>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/contact">Contact</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/search">Search</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/privacy">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/refund-policy">Refund Policy</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/make-money">Earn Money Online</a>
+            </li>
+            <li>
+                <a href="https://ideakart.com/about">About</a>
+            </li>
+            <li>
+                <a href="https://www.quickbuyer.in/">Quick Buyer</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+<script>
+    let users=JSON.parse(localStorage.getItem("userData"))||[];
+    document.querySelector("button").addEventListener("click",mySignIn);
+    function mySignIn(event){
+        event.preventDefault();
+        let data={
+           userEmail:document.querySelector("#email").value,
+           userPassword:document.querySelector("#password").value
+        }
+           
+        if(checkSignin(data.userEmail,data.userPassword)==true){
+            localStorage.setItem("signinData",JSON.stringify(data));
+            alert("sign in successful")
+            window.location.href="navbar.html";
+        }else{
+            alert("worng email or password")
+        }
+
+       function checkSignin(email,password){
+        let filter=users.filter(function(ele){
+            return ele.email==email && ele.password==password
+        })
+        if(filter.length>0){
+            return true;
+        }else{
+            return false
+        }
+       }
+    }
+</script>
