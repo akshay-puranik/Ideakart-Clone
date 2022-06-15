@@ -6,11 +6,133 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>navbar</title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                }
+
+                .nav {
+                        display: flex;
+                        /* border: 2px solid rgb(255, 0, 25); */
+                        background-color: #2874F0;
+                        justify-content: space-around;
+                        width: 100%;
+                        height: 54px;
+
+                }
+
+
+                .logo-search {
+                        width: 30%;
+                        /* border: 1px solid red; */
+                        justify-content: space-around;
+                        margin-left: 20px;
+
+                        display: flex;
+                }
+
+                .search-container {
+                        width: 85%;
+
+                        margin-left: 50px;
+                        display: flex;
+                }
+
+
+
+                .logo {
+                        color: #EFF511;
+                        /* width: 20%; */
+                        font-size: 18px;
+                        font-weight: lighter;
+                        font-family: "serif";
+                        margin-top: 17px;
+
+
+                }
+
+                .search {
+                        width: 390px;
+                        border-radius: 5px;
+                        margin-top: 10px;
+                        height: 32px;
+                        background-color: white;
+                        border-left: 5px;
+                        border-radius: 5px 0px 0px 5px;
+                        border: transparent;
+                        border-right: 1px solid rgb(69, 64, 64);
+                }
+
+                .searchbtn {
+                        width: 90px;
+                        border-radius: 5px;
+                        margin-top: 10px;
+                        height: 32px;
+                        margin-left: -4px;
+                        background-color: white;
+                        border: 1px solid white;
+                        border-radius: 0px 5px 5px 0px;
+                        border-left: 1px solid grey;
+                }
+
+                .options {
+
+                        display: flex;
+                        justify-content: space-between;
+                        width: 25%;
+                        margin-right: -37px;
+
+                }
+
+                .options>div {
+
+                        /* border: 1px solid green; */
+
+                        margin: auto;
+                }
+
+
+                .options>div>a {
+                        color: white;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        margin-top: 20px;
+                        /* border: 1px solid green; */
+                        text-decoration: none;
+                        font-size: 12px;
+                }
+        </style>
 </head>
 
 <body>
-        <h1>hello</h1>
-        <p>helllllllo</p>
+
+        <div class="nav">
+                <div class="logo-search">
+                        <div class="logo">
+                                <p>IDEAKART</p>
+                        </div>
+                        <div class="search-container">
+                                <input class="search" type="search" class="form-control rounded" placeholder=" Search"
+                                        aria-label="Search" aria-describedby="search-addon" />
+                                <button class="searchbtn" type="button" class="btn btn-outline-primary">search</button>
+
+                        </div>
+                </div>
+
+
+
+
+
+
+                <div class="options">
+                        <div><a href="#about">About</a></div>
+                        <div><a href="#contact">Contact</a></div>
+                        <div> <a href="#signin">Sign In</a></div>
+                        <div><a href="#Signup">Sign Up</a></div>
+
+                </div>
+
+        </div>
 
 </body>
 
