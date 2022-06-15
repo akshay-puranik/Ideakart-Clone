@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup</title>
+    <link rel="stylesheet" href="navbar_style.css">
+    <link rel="stylesheet" href="footer_style.css">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        #container{
+            width: 40%;
+            margin: auto;
+            padding: 30px;
+            margin-top: 70px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            border-radius: 20px;
+        }
+        #container>h2{
+            text-align: center;
+            margin-top: -10px;
+            margin-bottom: 30px;
+        }
+        input[type="text"],input[type="tel"],input[type="email"],input[type="password"],textarea{
+            width: 100%;
+            padding: 13px;
+            border: 1px solid grey;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        #container>p{
+            text-align: center;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 15px;
+            color: #979aa1  ;
+        }
+        #container>#signup{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 40px;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #2874f0;
+        }
+        #signup+div{
+            margin-top: 40px;
+            text-align: center;
+            color: #979aa1  ;
+        }
+        a{
+            color: blue;
+
+        }
+
+       
+
+    </style>
+</head>
+<body>
+
+<!-- navbar part of ideakart -->
+    
+    <div class="nav">
+        <div class="logo-search">
+                <div class="logo">
+                    <p><a href="home_page.html">IDEAKART</a></p>
+                </div>
+                <div class="search-container">
+                        <input class="search" type="search" class="form-control rounded" placeholder=" Search"
+                                aria-label="Search" aria-describedby="search-addon" />
+                        <button class="searchbtn" type="button" class="btn btn-outline-primary">search</button>
+
+                </div>
+        </div>
+        <div class="options">
+                <div><a href="about.html">About</a></div>
+                <div><a href="contact.html">Contact</a></div>
+                <div> <a href="singin.html">Sign In</a></div>
+                <div><a href="signup.html">Sign Up</a></div>
+
+        </div>
+
+</div>
+
+
+ <!-- signup part of ideakart -->
+
+
+    <div id="container">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="">Full name</label><br>
+            <input id="name" type="text" placeholder="Enter your full name"><br><br>
+            <label for="">Mobile number</label><br>
+            <input id="mobile" type="tel" placeholder="Enter your mobile number"><br><br>
+            <label for="">Email</label><br>
+            <input id="email" type="email" placeholder="Enter your email"><br><br>
+            <label for="">Password</label><br>
+            <input id="password" type="password" placeholder="Enter your password"><br><br>
+            <label for="">Confirm Password</label><br>
+            <input id="password" type="password" placeholder="Enter your password"><br><br>
+        </form>
+        <p>By signing up, I accept the ideakart <a href="privacy_policy.html">Terms of Service</a> and acknwlwdge the <a href="privacy_policy.html"></a>.</p>
+        <button id="signup">SIGN UP</button>
+        <div>Already have an account? <a href="index.html">Sign In</a></div>
+    </div>
+
+    
+
+     <!-- footer part of ideakart -->
+
+     <div id="foot-of-page">
+        <h3>Get To Know Us</h3>
+        <ul>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="search.html">Search</a>
+            </li>
+            <li>
+                <a href="privacy_policy.html">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="refund.html">Refund Policy</a>
+            </li>
+            <li>
+                <a href="earn_money.html">Earn Money Online</a>
+            </li>
+            <li>
+                <a href="quick_buyer">Quick Buyer</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- <script>
+    document.querySelector("#signup").addEventListener("click",mySignup);
+    let dataArr=JSON.parse(localStorage.getItem("userData"))||[];
+    function mySignup(){
+        event.preventDefault();
+        let dataObj={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            password:document.querySelector("#password").value
+        };
+
+        if(checkEmail(dataObj.email)==true){
+            dataArr.push(dataObj);
+        localStorage.setItem("userData",JSON.stringify(dataArr));
+        if(dataObj.email==""||dataObj.password==""||dataObj.name==""){
+            alert("please fill all details")
+        }else{
+            alert("Sign up completed....please signin");
+            window.location.href="index.html";
+        }
+        }else{
+            alert("Account already exist")
+        }
+
+        function checkEmail(email){
+            let filtered=dataArr.filter(function(ele){
+                return email===ele.email;
+            })
+            if(filtered.length>0){
+                return false;
+            }else{
+                return true;
+            }
+
+        }
+    }
+</script> -->
