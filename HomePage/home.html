@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 60px;
+      border: 1px solid rgb(102, 101, 101);
+      margin-bottom: 30px;
+    }
+
+    .item-image img {
+
+      width: 100%;
+      /* margin: 10px; */
+    }
+
+
+
+    .card-container {
+      /* width: 100%; */
+      padding: 40px 10%;
+      /* display: flex; */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 30px;
+      border: 2px solid black;
+    }
+
+    .item-image {
+      padding: 10px;
+    }
+
+    .cards {
+      border-radius: 10px;
+      /* padding: 10px; */
+      border: 1px solid #e6e6e6;
+    }
+
+    .text-content {
+      font-size: small;
+      padding: 10px;
+    }
+
+    .text-content:hover {
+      background-color: #e6e6e6;
+    }
+
+    .text-content>p:last-child {
+      color: blue;
+    }
+
+    .cart-details {
+      display: flex;
+      /* width: 100%; */
+      padding: 10px;
+      justify-content: space-around;
+      font-size: small;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+
+  </div>
+
+  <h2>Top Reads</h2>
+
+  <div class="card-container">
+    <!-- https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F09%2F9781408855652-png.jpg -->
+    <div class="cards">
+      <div class="item-image">
+        <a href="" id="redirect-url">
+          <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F09%2F9781408855652-png.jpg" alt="">
+
+        </a>
+      </div>
+      <div class="text-content">
+        <p>Kids School Bag Soft Plush Backpack Cartoon Toy, Children's Gifts Boy Girl/Baby/Decor School Bag For Kids</p>
+        <p id="item-price">Price</p>
+      </div>
+      <div class="cart-details">
+
+        <p>🛒 Add to Cart</p>
+
+        <img src="" alt="">
+        <p>📃 Details</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // function displayData() {
+    // for (let i = 0; i < dataBase.length; i++) {
+    //   let cardContainer = document.createElement("div")
+    //   cardContainer.setAttribute("class", "cards");
+
+    //   let image = document.createElement("img");
+    //   image.src = dataBase[i].image;
+
+    //   // let details = document.createElement("p");
+    //   // details.href = dataBase[i].url;
+
+    //   let description = document.createElement("p");
+    //   description.innerText = dataBase[i].name;
+
+    //   let itemPrice = document.createElement("h3");
+    //   itemPrice.innerText = dataBase[i].price;
+
+    //   let card = document.createElement("div");
+    //   card.append(image, description, itemPrice);
+
+    //   cardContainer.append(card);
+
+    
+    // }
+var container = document.querySelector(".container");
+
+for (let i = 0; i < mensData.length; i++) {
+  let card = document.createElement("div");
+  card.classList.add("card");
+  let imgLink = mensData[i].image_url;
+  let img = document.createElement("img");
+  img.setAttribute("src", imgLink);
+  card.append(img);
+
+  // console.log("here")
+
+  let name = document.createElement("p");
+  name.innerText = mensData[i].name;
+  name.style.fontSize = "smaller";
+  card.append(name);
+
+  let price = document.createElement("p");
+  price.innerText = mensData[i].price;
+  card.append(price);
+
+  let addToCart = document.createElement("button");
+  addToCart.innerText = "Add To Cart";
+  addToCart.style.padding = "10px 20px";
+  card.append(addToCart);
+
+  container.append(card);
+}
+
+    
+  // }
+
+
+
+  var dataBase = [{
+      image: "https://images-eu.ssl-images-amazon.com/images/I/41m7FD8ZB4L.jpg",
+      url: "https://ideakart.com/book/startup-karnarach-mi-udyojak-honarach-mi-isbn10-9385223941-isbn13-9789385223945",
+      name: "Startup Karnarach Mi Udyojak Honarach Mi (स्टार्टअप करणारच मी, उद्योजक होणारच मी)",
+      price: "240.0"
+
+    },
+
+    {
+      image: "https://images-eu.ssl-images-amazon.com/images/I/51prFYi1qHL.jpg",
+      url: "https://ideakart.com/book/make-think-imagine-engineering-the-future-of-civilisation-isbn10-1526605708-isbn13-9781526605702",
+      name: "Make, Think, Imagine: Engineering the Future of Civilisation",
+      price: "1229.0"
+
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41oyhZiOxcL.jpg",
+      "url": "https://ideakart.com/book/jennifer-one-woman-two-continents-and-a-truth-called-child-trafficking-isbn10-9353338417-isbn13-9789353338411",
+      "name": "JENNIFER: One Woman, Two Continents and a Truth Called Child Trafficking",
+      "price": "198.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41o7R-iL8jL.jpg",
+      "url": "https://ideakart.com/book/handbook-of-visual-optics-volume-one-fundamentals-and-eye-optics-isbn10-0367869926-isbn13-9780367869922",
+      "name": "Handbook of Visual Optics, Volume One: Fundamentals and Eye Optics",
+      "price": "4035.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/51d33xdLR4L.jpg",
+      "url": "https://ideakart.com/book/kurti-on-sale-2018-hoc-kurti-long-for-women-latest-design-party-wear-kurti-latest-design-kurti-materials-for-women-unstitched-kurtas-for-womens-below-300-kurta-and-kurti-for-women-ladies-kurta-cotton-latest-design-kurta-dresses-for-women-isbn10--isbn13-0000595175398",
+      "name": "kurti on sale 2018 HOC kurti long for women latest design party wear kurti latest design kurti materials for women unstitched kurtas for womens below 300 kurta and kurti for women ladies kurta cotton latest design kurta dresses for women",
+      "price": "474.0"
+
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/616uNJHZCSL.jpg",
+      "url": "https://ideakart.com/book/taylor-swift-2019-mini-wall-calendar-isbn10-1975403851-isbn13-9781975403850",
+      "name": "Taylor Swift 2019 Mini Wall Calendar",
+      "price": "476.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/518LUFZvQ9L.jpg",
+      "url": "https://ideakart.com/book/studies-in-the-history-of-accounting-edited-on-behalf-of-the-association-of-university-teachers-of-accounting-and-the-american-accounting-association-classic-reprint-isbn10-1527715019-isbn13-9781527715011",
+      "name": "Studies in the History of Accounting: Edited on Behalf of the Association of University Teachers of Accounting and the American Accounting Association (Classic Reprint)",
+      "price": "1179.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41fiYTORdxL.jpg",
+      "url": "https://ideakart.com/book/m-s-golwakar-the-rss-and-india-isbn10-9388689488-isbn13-9789388689489",
+      "name": "M.S. Golwakar, the RSS and India",
+      "price": "221.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/418-LcVQzhL.jpg",
+      "url": "https://ideakart.com/book/drug-information-handbook-for-oncology-isbn10-1591953685-isbn13-9781591953685",
+      "name": "Drug Information Handbook for Oncology",
+      "price": "4245.68"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/51rDgyyItGL.jpg",
+      "url": "https://ideakart.com/book/muslims-the-real-history-isbn10-9353041120-isbn13-9789353041120",
+      "name": "Muslims: The Real History",
+      "price": "608.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/51yURGyytuL.jpg",
+      "url": "https://ideakart.com/book/red-card-fifa-and-the-fall-of-the-most-powerful-men-in-sports-isbn10-1788160622-isbn13-9781788160629",
+      "name": "Red Card: FIFA and the Fall of the Most Powerful Men in Sports",
+      "price": "517.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41wZNUxDYyL.jpg",
+      "url": "https://ideakart.com/book/ssc-je-civil-engineering-objective-solved-papers-2007-2018-isbn10-9388137337-isbn13-9789388137331",
+      "name": "SSC- JE: Civil Engineering Objective Solved Papers (2007-2018)",
+      "price": "599.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41CPqhoKaJL.jpg",
+      "url": "https://ideakart.com/book/the-art-in-painting-classic-reprint-isbn10-1396841709-isbn13-9781396841705",
+      "name": "The Art in Painting (Classic Reprint)",
+      "price": "1649.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/51Ca%2BMvsi1L.jpg",
+      "url": "https://ideakart.com/book/photographic-memory-10-steps-to-remember-anything-superfast-accelerated-learning-for-unlimited-memory-efficiency-create-habits-to-help-you-improve-your-memory-focus-and-clarity-mind-hacking-isbn10-1922320846-isbn13-9781922320841",
+      "name": "Photographic Memory: 10 Steps to remember Anything Superfast! Accelerated Learning for Unlimited Memory Efficiency. Create Habits to Help You Improve Your Memory, Focus and Clarity. Mind Hacking!",
+      "price": "1079.0"
+    },
+
+    {
+      "image": "https://images-eu.ssl-images-amazon.com/images/I/41iAdfMfCbL.jpg",
+      "url": "https://ideakart.com/book/the-conference-of-the-birds-isbn10-0393355543-isbn13-9780393355543",
+      "name": "The Conference of the Birds",
+      "rpice": "826.0"
+    }
+  ]
+
+
+  // displayData();
+</script>

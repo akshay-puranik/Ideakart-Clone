@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <input type="text" placeholder="enter image url" id="image-link">
+    <input type="text" name="title" id="title" placeholder="title">
+    <input type="text" id="short-desc" placeholder="enter description">
+    <input type="number" id="price" placeholder="enter price">
+    <input type="text" id="bind" placeholder="binding?">
+    <input type="text" id="lang" placeholder="Enter language">
+    <input type="text" id="auth" placeholder="author?">
+    <input type="submit" id="submit">
+  </form>
+</body>
+
+</html>
+
+<script>
+
+  let form = document.querySelector("form");
+  let dataArray = JSON.parse(localStorage.getItem("dataArray")) || [];
+
+  let submit = document.querySelector("#submit");
+  submit.addEventListener("click",addData);
+
+  function addData(){
+    let obj = {
+      image : document.querySelector("#image-link").value,
+      title : document.querySelector("#title").value,
+      sdis : document.querySelector("#short-desc").value,
+      bind: 
+    };
+
+  }
+
+
+
+
+
+</script>
