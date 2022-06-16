@@ -16,10 +16,12 @@
 
   .container {
     margin: auto;
+    display: flex;
+    /* grid-template-columns: repeat(4, 1fr); */
+    flex-direction: column;
+    height: 500vh;
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    height: auto;
+    flex-wrap: wrap;
     gap: 20px;
   }
 
@@ -27,6 +29,12 @@
     padding: 10px;
     border: 1px solid rgb(158, 151, 151);
     border-radius: 6px;
+    height: fit-content;
+    width: 10em;
+  }
+
+  .card:first-child{
+    display: none;
   }
 
   .price {
